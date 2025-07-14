@@ -1,0 +1,320 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mobile-friendly styles */
+html, body {
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  height: 100%;
+  max-width: 100vw;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  @apply bg-gray-50 text-gray-900;
+}
+
+/* Custom scrollbar for better mobile experience */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  border-radius: 9999px;
+}
+
+/* Responsive font sizes */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 1.25rem;
+  }
+  h2 {
+    font-size: 1.125rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+  .text-2xl {
+    font-size: 1.25rem;
+  }
+  .text-xl {
+    font-size: 1.125rem;
+  }
+  .text-lg {
+    font-size: 1rem;
+  }
+}
+
+/* Utility classes for mobile optimization */
+@media (max-width: 640px) {
+  .mobile-px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .mobile-full-width {
+    width: 100%;
+  }
+  .mobile-px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Prevent content overflow on mobile */
+.mobile-content-container {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Better tap targets for mobile */
+@media (max-width: 640px) {
+  button, a {
+    min-height: 36px;
+    min-width: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Improved mobile spacing */
+@media (max-width: 768px) {
+  .p-4 {
+    padding: 0.75rem;
+  }
+  .gap-6 {
+    gap: 1rem;
+  }
+  .mb-6 {
+    margin-bottom: 1rem;
+  }
+  .grid {
+    grid-gap: 0.75rem;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Fix for mobile menu transitions */
+@media (max-width: 768px) {
+  .translate-x-0 {
+    transform: translateX(0) !important;
+  }
+  .-translate-x-full {
+    transform: translateX(-100%) !important;
+  }
+}
+
+/* Enhanced animation for logo elements */
+@keyframes pulse-blue {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+.pulse-blue {
+  animation: pulse-blue 3s infinite;
+}
+
+/* Improve card rendering on mobile */
+@media (max-width: 640px) {
+  .card-shadow {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  .card-shadow:hover {
+    transform: none;
+  }
+}
+
+/* Blue theme colors */
+:root {
+  --primary-color: #0A4D92;
+  --secondary-color: #1976D2;
+  --accent-color: #64B5F6;
+  --highlight-color: #2196F3;
+}
+
+/* Mobile fixes for spacing */
+@media (max-width: 640px) {
+  .p-6 {
+    padding: 1rem;
+  }
+  .p-5 {
+    padding: 0.75rem;
+  }
+  .space-x-4 {
+    gap: 0.5rem;
+  }
+}
+
+/* Prevent overflowing content on small screens */
+@media (max-width: 768px) {
+  .overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+    position: relative;
+  }
+  
+  .truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+/* Additional mobile fixes */
+@media (max-width: 768px) {
+  /* Make header stick to top */
+  header.bg-white {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 30;
+  }
+
+  /* Adjust logo sizing on mobile */
+  .logo-container svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* Make sidebar fully opaque */
+.bg-primary-600 {
+  background-color: var(--primary-color);
+}
+
+/* Fix for card date display on mobile */
+@media (max-width: 360px) {
+  .truncate {
+    max-width: 80px;
+  }
+}
+
+/* Fix nav spacing on very small screens */
+@media (max-width: 320px) {
+  .space-x-2 {
+    gap: 0.25rem;
+  }
+  
+  .px-3 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+/* Fix for sticky elements inside tables */
+.sticky {
+  position: sticky;
+}
+
+/* Fix for comparison matrix on mobile */
+@media (max-width: 768px) {
+  .comparison-matrix-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 16px;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .comparison-matrix-table {
+    min-width: 640px;
+  }
+  
+  /* Fix for left-sticky column */
+  th.sticky, td.sticky {
+    background-color: white;
+    z-index: 10;
+    left: 0;
+    box-shadow: 2px 0px 3px rgba(0,0,0,0.05);
+  }
+  
+  tr:hover td.sticky {
+    background-color: #f9fafb; /* bg-gray-50 equivalent */
+  }
+  
+  thead th.sticky {
+    z-index: 11;
+  }
+}
+
+/* Fix for mobile sidebar positioning */
+@media (max-width: 768px) {
+  .fixed.left-0.transform.translate-x-0,
+  .fixed.left-0.transform.-translate-x-full {
+    width: 280px !important;
+    left: 0 !important;
+  }
+
+  .fixed.left-0.transform.-translate-x-full {
+    transform: translateX(-100%) !important;
+  }
+  
+  .fixed.left-0.transform.translate-x-0 {
+    transform: translateX(0) !important;
+  }
+  
+  /* Ensure proper z-index for mobile menu components */
+  .fixed.top-0.left-0.h-full.z-40 {
+    z-index: 40 !important;
+  }
+  
+  .fixed.top-2.left-2.z-50 {
+    z-index: 50 !important;
+  }
+  
+  .fixed.inset-0.bg-black.bg-opacity-50.z-30 {
+    z-index: 30 !important;
+  }
+}
