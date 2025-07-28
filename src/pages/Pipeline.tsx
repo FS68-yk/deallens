@@ -92,7 +92,7 @@ const Pipeline: React.FC = () => {
       </div>
       
       {showFilters && (
-        <div className="bg-white rounded-lg shadow-sm p-4 mb-6 animate-fade-in">
+        <div className="glass-card rounded-2xl shadow-2xl p-6 mb-6 animate-fade-in">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">时间范围</label>
@@ -152,7 +152,7 @@ const Pipeline: React.FC = () => {
       
       {/* 关键指标 */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-        <div className="bg-white rounded-lg shadow-sm p-5">
+        <div className="glass-card rounded-2xl shadow-2xl p-6">
           <div className="flex items-center justify-between">
             <div className="text-gray-500 text-sm flex items-center">
               <Database size={16} className="mr-1.5" />
@@ -166,7 +166,7 @@ const Pipeline: React.FC = () => {
           </div>
         </div>
         
-        <div className="bg-white rounded-lg shadow-sm p-5">
+        <div className="glass-card rounded-2xl shadow-2xl p-6">
           <div className="flex items-center justify-between">
             <div className="text-gray-500 text-sm flex items-center">
               <BarChart2 size={16} className="mr-1.5" />
@@ -179,7 +179,7 @@ const Pipeline: React.FC = () => {
           </div>
         </div>
         
-        <div className="bg-white rounded-lg shadow-sm p-5">
+        <div className="glass-card rounded-2xl shadow-2xl p-6">
           <div className="flex items-center justify-between">
             <div className="text-gray-500 text-sm flex items-center">
               <ArrowDownUp size={16} className="mr-1.5" />
@@ -191,7 +191,7 @@ const Pipeline: React.FC = () => {
           </div>
         </div>
         
-        <div className="bg-white rounded-lg shadow-sm p-5">
+        <div className="glass-card rounded-2xl shadow-2xl p-6">
           <div className="flex items-center justify-between">
             <div className="text-gray-500 text-sm flex items-center">
               <PieChart size={16} className="mr-1.5" />
@@ -207,7 +207,7 @@ const Pipeline: React.FC = () => {
       
       {/* 分布图表 */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-        <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+        <div className="glass-card rounded-2xl shadow-2xl overflow-hidden">
           <div className="p-4 border-b border-gray-100 flex justify-between items-center">
             <h2 className="font-medium text-primary-800">行业分布</h2>
             <button className="p-1.5 text-gray-500 hover:text-primary-700 hover:bg-gray-100 rounded">
@@ -239,7 +239,7 @@ const Pipeline: React.FC = () => {
           </div>
         </div>
         
-        <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+        <div className="glass-card rounded-2xl shadow-2xl overflow-hidden">
           <div className="p-4 border-b border-gray-100 flex justify-between items-center">
             <h2 className="font-medium text-primary-800">地域分布</h2>
             <div className="flex items-center text-sm text-gray-600">
@@ -272,7 +272,7 @@ const Pipeline: React.FC = () => {
       
       {/* 更多分析图表 */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
-        <div className="lg:col-span-2 bg-white rounded-lg shadow-sm overflow-hidden">
+        <div className="lg:col-span-2 glass-card rounded-2xl shadow-2xl overflow-hidden">
           <div className="p-4 border-b border-gray-100 flex justify-between items-center">
             <h2 className="font-medium text-primary-800">投资管道预测</h2>
             <button className="flex items-center text-xs text-primary-600 hover:text-primary-800">
@@ -319,7 +319,7 @@ const Pipeline: React.FC = () => {
           </div>
         </div>
         
-        <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+        <div className="glass-card rounded-2xl shadow-2xl overflow-hidden">
           <div className="p-4 border-b border-gray-100">
             <h2 className="font-medium text-primary-800">阶段分布</h2>
           </div>
@@ -381,7 +381,7 @@ const Pipeline: React.FC = () => {
       </div>
       
       {/* 团队绩效 */}
-      <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+      <div className="glass-card rounded-2xl shadow-2xl overflow-hidden">
         <div className="p-4 border-b border-gray-100 flex justify-between items-center">
           <h2 className="font-medium text-primary-800">团队绩效</h2>
           <button className="text-sm text-primary-600 hover:text-primary-800">

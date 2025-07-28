@@ -4,7 +4,6 @@ import { format } from 'date-fns';
 import { ArrowLeft, Globe, MapPin, Calendar, DollarSign, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
-import DealLensLogo from '../Layout/DealLensLogo';
 
 interface ProjectHeaderProps {
   project: Project;
@@ -14,9 +13,9 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({ project }) => {
   const { t, language } = useLanguage();
   
   return (
-    <div className="bg-white rounded-lg shadow-sm mb-6 overflow-hidden">
+    <div className="glass-card rounded-2xl shadow-2xl mb-6 overflow-hidden">
       {/* Header with background and logo */}
-      <div className="h-48 bg-gradient-to-r from-primary-600 to-primary-700 relative">
+      <div className="h-48 bg-gradient-to-r from-blue-600/30 to-purple-600/30 relative backdrop-blur-sm">
         <div className="absolute inset-0 p-6">
           <Link
             to="/"
@@ -66,7 +65,7 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({ project }) => {
               </div>
             </div>
             <div className="hidden md:block">
-              <button className="bg-accent-400 text-primary-800 px-4 py-2 rounded-lg font-medium hover:bg-accent-500 transition-colors">
+              <button className="bg-white/20 text-white px-4 py-2 rounded-lg font-medium hover:bg-white/30 transition-colors backdrop-blur-sm">
                 {t('project.trackDeal')}
               </button>
             </div>
@@ -77,35 +76,35 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({ project }) => {
       {/* Key metrics section */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 p-6">
         <div className="flex flex-col">
-          <span className="text-sm text-gray-500 flex items-center">
+          <span className="text-sm text-white/70 flex items-center">
             <Calendar size={14} className="mr-1.5" />
             {t('project.lastUpdated')}
           </span>
-          <span className="text-primary-800 font-medium mt-1">
+          <span className="text-white font-medium mt-1">
             {format(new Date(project.updatedAt), language === 'zh' ? 'yyyy年MM月dd日' : 'MMM d, yyyy')}
           </span>
         </div>
         
         <div className="flex flex-col">
-          <span className="text-sm text-gray-500 flex items-center">
+          <span className="text-sm text-white/70 flex items-center">
             <DollarSign size={14} className="mr-1.5" />
             {t('project.valuation')}
           </span>
-          <span className="text-primary-800 font-medium mt-1">{project.valuation}</span>
+          <span className="text-white font-medium mt-1">{project.valuation}</span>
         </div>
         
         <div className="flex flex-col">
-          <span className="text-sm text-gray-500">{t('project.stage')}</span>
-          <span className="text-primary-800 font-medium mt-1">{project.stage}</span>
+          <span className="text-sm text-white/70">{t('project.stage')}</span>
+          <span className="text-white font-medium mt-1">{project.stage}</span>
         </div>
         
         {project.financials.revenueGrowth > 0 && (
           <div className="flex flex-col">
-            <span className="text-sm text-gray-500 flex items-center">
+            <span className="text-sm text-white/70 flex items-center">
               <TrendingUp size={14} className="mr-1.5" />
               {t('project.revenueGrowth')}
             </span>
-            <span className="text-success-600 font-medium mt-1">
+            <span className="text-green-400 font-medium mt-1">
               {project.financials.revenueGrowth}%
             </span>
           </div>

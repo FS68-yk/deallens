@@ -256,7 +256,7 @@ const Team: React.FC = () => {
       
       {/* Team performance metrics */}
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-6">
-        <div className="bg-white rounded-lg shadow-sm p-4">
+        <div className="glass-card rounded-2xl shadow-2xl p-5">
           <p className="text-sm text-gray-500 mb-1">
             {language === 'zh' ? '团队规模' : 'Team Size'}
           </p>
@@ -266,35 +266,35 @@ const Team: React.FC = () => {
           </p>
         </div>
         
-        <div className="bg-white rounded-lg shadow-sm p-4">
+        <div className="glass-card rounded-2xl shadow-2xl p-5">
           <p className="text-sm text-gray-500 mb-1">
             {language === 'zh' ? '活跃项目' : 'Active Deals'}
           </p>
           <p className="text-xl font-semibold text-primary-800">{performanceData.activeDeals}</p>
         </div>
         
-        <div className="bg-white rounded-lg shadow-sm p-4">
+        <div className="glass-card rounded-2xl shadow-2xl p-5">
           <p className="text-sm text-gray-500 mb-1">
             {language === 'zh' ? '已完成项目' : 'Completed Deals'}
           </p>
           <p className="text-xl font-semibold text-primary-800">{performanceData.completedDeals}</p>
         </div>
         
-        <div className="bg-white rounded-lg shadow-sm p-4">
+        <div className="glass-card rounded-2xl shadow-2xl p-5">
           <p className="text-sm text-gray-500 mb-1">
             {language === 'zh' ? '总投资额' : 'Total Investment'}
           </p>
           <p className="text-xl font-semibold text-primary-800">{performanceData.totalInvestment}</p>
         </div>
         
-        <div className="bg-white rounded-lg shadow-sm p-4">
+        <div className="glass-card rounded-2xl shadow-2xl p-5">
           <p className="text-sm text-gray-500 mb-1">
             {language === 'zh' ? '平均决策周期' : 'Avg. Cycle Time'}
           </p>
           <p className="text-xl font-semibold text-primary-800">{performanceData.averageCycleTime}</p>
         </div>
         
-        <div className="bg-white rounded-lg shadow-sm p-4">
+        <div className="glass-card rounded-2xl shadow-2xl p-5">
           <p className="text-sm text-gray-500 mb-1">
             {language === 'zh' ? '投资转化率' : 'Conversion Rate'}
           </p>
@@ -303,7 +303,7 @@ const Team: React.FC = () => {
       </div>
       
       {/* Department quick view */}
-      <div className="bg-white rounded-lg shadow-sm overflow-hidden mb-6">
+      <div className="glass-card rounded-2xl shadow-2xl overflow-hidden mb-6">
         <div className="p-4 border-b border-gray-100">
           <h2 className="font-medium text-primary-800">
             {language === 'zh' ? '部门概览' : 'Department Overview'}
@@ -336,7 +336,7 @@ const Team: React.FC = () => {
       </div>
       
       {/* Team members list */}
-      <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+      <div className="glass-card rounded-2xl shadow-2xl overflow-hidden">
         <div className="p-4 border-b border-gray-100 flex justify-between items-center">
           <h2 className="font-medium text-primary-800">
             {language === 'zh' ? '团队成员' : 'Team Members'}
@@ -518,7 +518,7 @@ const Team: React.FC = () => {
       {/* Add Team Member Modal */}
       {showAddMemberModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg shadow-lg w-full max-w-md animate-fade-in animate-slide-in">
+          <div className="glass-card rounded-2xl shadow-2xl w-full max-w-md animate-fade-in animate-slide-in">
             <div className="p-4 border-b border-gray-100">
               <h2 className="font-medium text-primary-800">
                 {language === 'zh' ? '添加团队成员' : 'Add Team Member'}

@@ -87,7 +87,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
   return (
     <div 
-      className="bg-white rounded-lg overflow-hidden card-shadow cursor-pointer transition-all duration-300 hover:transform hover:scale-[1.02]"
+      className="glass-card rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:transform hover:scale-[1.02] hover:glass-card shadow-2xl"
       onClick={handleClick}
     >
       <div className="relative">
@@ -115,48 +115,48 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         </div>
         
         {/* Industry badge */}
-        <div className="absolute top-3 right-3 bg-white/90 text-primary-600 px-2 py-1 rounded text-xs font-medium shadow-sm">
+        <div className="absolute top-3 right-3 glass text-white px-3 py-1.5 rounded-full text-xs font-medium shadow-lg">
           {project.industry}
         </div>
       </div>
 
-      <div className="p-3 sm:p-4">
-        <h3 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2 text-primary-800 line-clamp-1">{project.name}</h3>
+      <div className="p-4 sm:p-5">
+        <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-white line-clamp-1">{project.name}</h3>
         
-        <div className="text-xs sm:text-sm text-gray-600 line-clamp-2 mb-3 sm:mb-4">
+        <div className="text-xs sm:text-sm text-white/80 line-clamp-2 mb-4 sm:mb-5">
           {project.description}
         </div>
         
-        <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-3 sm:mb-4">
-          <div className="flex items-center text-xs sm:text-sm text-gray-600">
-            <Briefcase size={14} className="mr-1.5 text-primary-500 flex-shrink-0" />
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-5">
+          <div className="flex items-center text-xs sm:text-sm text-white/90">
+            <Briefcase size={14} className="mr-2 text-white/70 flex-shrink-0" />
             <span className="truncate">{project.stage}</span>
           </div>
-          <div className="flex items-center text-xs sm:text-sm text-gray-600">
-            <DollarSign size={14} className="mr-1.5 text-accent-500 flex-shrink-0" />
+          <div className="flex items-center text-xs sm:text-sm text-white/90">
+            <DollarSign size={14} className="mr-2 text-white/70 flex-shrink-0" />
             <span className="truncate">{project.valuation}</span>
           </div>
-          <div className="flex items-center text-xs sm:text-sm text-gray-600">
-            <FileText size={14} className="mr-1.5 text-secondary-500 flex-shrink-0" />
+          <div className="flex items-center text-xs sm:text-sm text-white/90">
+            <FileText size={14} className="mr-2 text-white/70 flex-shrink-0" />
             <span className="truncate">{project.documents.length} {t('project.documents').toLowerCase()}</span>
           </div>
-          <div className="flex items-center text-xs sm:text-sm text-gray-600">
-            <Calendar size={14} className="mr-1.5 text-gray-500 flex-shrink-0" />
+          <div className="flex items-center text-xs sm:text-sm text-white/90">
+            <Calendar size={14} className="mr-2 text-white/70 flex-shrink-0" />
             <span className="truncate">{format(new Date(project.updatedAt), language === 'zh' ? 'MM月dd日' : 'MMM d')}</span>
           </div>
         </div>
         
-        <div className="flex flex-wrap gap-1.5">
+        <div className="flex flex-wrap gap-2">
           {project.tags.slice(0, 2).map((tag, index) => (
             <span 
               key={index}
-              className="bg-gray-100 text-gray-700 px-2 py-0.5 rounded-full text-xs truncate"
+              className="glass text-white px-3 py-1 rounded-full text-xs truncate"
             >
               {tag}
             </span>
           ))}
           {project.tags.length > 2 && (
-            <span className="bg-gray-100 text-gray-700 px-2 py-0.5 rounded-full text-xs">
+            <span className="glass text-white px-3 py-1 rounded-full text-xs">
               +{project.tags.length - 2}
             </span>
           )}

@@ -3,6 +3,12 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      backdropBlur: {
+        xs: '2px',
+      },
+      backdropSaturate: {
+        200: '2',
+      },
       colors: {
         primary: {
           50: '#E6EEF7',

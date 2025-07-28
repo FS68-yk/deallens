@@ -487,7 +487,7 @@ const Settings: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         {/* 左侧导航 */}
         <div className="md:col-span-1">
-          <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+          <div className="glass-card rounded-2xl shadow-2xl overflow-hidden">
             <div className="p-4 border-b border-gray-100">
               <h2 className="font-medium text-primary-800">{t('common.settings')}</h2>
             </div>
@@ -566,7 +566,7 @@ const Settings: React.FC = () => {
         
         {/* 右侧内容 */}
         <div className="md:col-span-3">
-          <div className="bg-white rounded-lg shadow-sm p-6">
+          <div className="glass-card rounded-2xl shadow-2xl p-6">
             {renderTabContent()}
           </div>
         </div>

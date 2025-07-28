@@ -342,7 +342,7 @@ const Tags: React.FC = () => {
       </div>
       
       {/* Tag categories */}
-      <div className="bg-white rounded-lg shadow-sm overflow-hidden mb-6">
+      <div className="glass-card rounded-2xl shadow-2xl overflow-hidden mb-6">
         <div className="p-4 border-b border-gray-100">
           <h2 className="font-medium text-primary-800">
             {language === 'zh' ? '标签分类' : 'Tag Categories'}
@@ -370,7 +370,7 @@ const Tags: React.FC = () => {
       </div>
       
       {/* Tags list */}
-      <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+      <div className="glass-card rounded-2xl shadow-2xl overflow-hidden">
         <div className="p-4 border-b border-gray-100 flex justify-between items-center">
           <h2 className="font-medium text-primary-800">
             {language === 'zh' ? '标签' : 'Tags'}
@@ -518,7 +518,7 @@ const Tags: React.FC = () => {
       {/* Create Tag Modal */}
       {showCreateModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg shadow-lg w-full max-w-md animate-fade-in animate-slide-in">
+          <div className="glass-card rounded-2xl shadow-2xl w-full max-w-md animate-fade-in animate-slide-in">
             <div className="p-4 border-b border-gray-100">
               <h2 className="font-medium text-primary-800">
                 {language === 'zh' ? '创建新标签' : 'Create New Tag'}

@@ -5,7 +5,7 @@ import {
   Compass, Search, Download, Check, X, ChevronDown, 
   ChevronUp, RefreshCw, ArrowUpDown, PlusSquare, MinusSquare,
   AlertTriangle, CheckCircle, Filter, TrendingUp, TrendingDown,
-  Info, HelpCircle
+  Info, HelpCircle, BarChart2
 } from 'lucide-react';
 import { Project } from '../types/types';
 
@@ -305,7 +305,7 @@ const ComparisonMatrix: React.FC = () => {
       </div>
       
       {/* Comparison Matrix */}
-      <div className="bg-white rounded-lg shadow-sm overflow-hidden mb-6">
+      <div className="glass-card rounded-2xl shadow-2xl overflow-hidden mb-6">
         {projectsToCompare.length === 0 ? (
           <div className="py-16 text-center">
             <Compass size={48} className="mx-auto text-gray-300 mb-3" />
@@ -427,7 +427,7 @@ const ComparisonMatrix: React.FC = () => {
       
       {/* Detailed Notes and Analysis */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+        <div className="glass-card rounded-2xl shadow-2xl overflow-hidden">
           <div className="p-4 border-b border-gray-100">
             <h2 className="font-medium text-primary-800">
               {language === 'zh' ? '比较总结' : 'Comparison Summary'}
@@ -500,7 +500,7 @@ const ComparisonMatrix: React.FC = () => {
           </div>
         </div>
         
-        <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+        <div className="glass-card rounded-2xl shadow-2xl overflow-hidden">
           <div className="p-4 border-b border-gray-100">
             <h2 className="font-medium text-primary-800">
               {language === 'zh' ? '技术说明' : 'Technical Notes'}
@@ -577,7 +577,7 @@ const ComparisonMatrix: React.FC = () => {
       {/* Selection Modal */}
       {showSelectionModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg shadow-lg w-full max-w-2xl mx-4 animate-fade-in animate-slide-in">
+          <div className="glass-card rounded-2xl shadow-2xl w-full max-w-2xl mx-4 animate-fade-in animate-slide-in">
             <div className="p-4 border-b border-gray-100 flex justify-between items-center">
               <h2 className="font-medium text-primary-800">
                 {modalTab === 'projects'

@@ -112,7 +112,7 @@ const Portfolio: React.FC = () => {
       
       {/* Optional filters */}
       {showFilters && (
-        <div className="bg-white rounded-lg shadow-sm p-4 mb-6 animate-fade-in">
+        <div className="glass-card rounded-2xl shadow-2xl p-6 mb-6 animate-fade-in">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -165,7 +165,7 @@ const Portfolio: React.FC = () => {
       
       {/* Portfolio Overview */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-        <div className="bg-white rounded-lg shadow-sm p-5">
+        <div className="glass-card rounded-2xl shadow-2xl p-6">
           <p className="text-sm text-gray-500 mb-1">
             {language === 'zh' ? '总投资额' : 'Total Investment'}
           </p>
@@ -179,7 +179,7 @@ const Portfolio: React.FC = () => {
           </div>
         </div>
         
-        <div className="bg-white rounded-lg shadow-sm p-5">
+        <div className="glass-card rounded-2xl shadow-2xl p-6">
           <p className="text-sm text-gray-500 mb-1">
             {language === 'zh' ? '估值增长' : 'Valuation Growth'}
           </p>
@@ -192,7 +192,7 @@ const Portfolio: React.FC = () => {
           </div>
         </div>
         
-        <div className="bg-white rounded-lg shadow-sm p-5">
+        <div className="glass-card rounded-2xl shadow-2xl p-6">
           <p className="text-sm text-gray-500 mb-1">
             {language === 'zh' ? '平均增长率' : 'Avg. Growth Rate'}
           </p>
@@ -206,7 +206,7 @@ const Portfolio: React.FC = () => {
           </div>
         </div>
         
-        <div className="bg-white rounded-lg shadow-sm p-5">
+        <div className="glass-card rounded-2xl shadow-2xl p-6">
           <p className="text-sm text-gray-500 mb-1">
             {language === 'zh' ? '平均持有期' : 'Avg. Holding Period'}
           </p>
@@ -222,7 +222,7 @@ const Portfolio: React.FC = () => {
       {/* Portfolio Distribution */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
         {/* Industry Distribution */}
-        <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+        <div className="glass-card rounded-2xl shadow-2xl overflow-hidden">
           <div className="p-4 border-b border-gray-100">
             <h2 className="font-medium text-primary-800">
               {language === 'zh' ? '行业分布' : 'Industry Distribution'}
@@ -261,7 +261,7 @@ const Portfolio: React.FC = () => {
         </div>
         
         {/* Stage Distribution */}
-        <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+        <div className="glass-card rounded-2xl shadow-2xl overflow-hidden">
           <div className="p-4 border-b border-gray-100">
             <h2 className="font-medium text-primary-800">
               {language === 'zh' ? '阶段分布' : 'Stage Distribution'}
@@ -318,7 +318,7 @@ const Portfolio: React.FC = () => {
         </div>
         
         {/* Runway Analysis */}
-        <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+        <div className="glass-card rounded-2xl shadow-2xl overflow-hidden">
           <div className="p-4 border-b border-gray-100">
             <h2 className="font-medium text-primary-800">
               {language === 'zh' ? '资金可持续性分析' : 'Runway Analysis'}
@@ -384,7 +384,7 @@ const Portfolio: React.FC = () => {
       </div>
       
       {/* Projects with Health Score */}
-      <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+      <div className="glass-card rounded-2xl shadow-2xl overflow-hidden">
         <div className="p-4 border-b border-gray-100 flex justify-between items-center">
           <h2 className="font-medium text-primary-800">
             {language === 'zh' ? '项目健康度' : 'Project Health'}
@@ -599,7 +599,7 @@ const Portfolio: React.FC = () => {
       </div>
       
       {/* Portfolio Insights */}
-      <div className="mt-6 bg-white rounded-lg shadow-sm overflow-hidden">
+      <div className="mt-6 glass-card rounded-2xl shadow-2xl overflow-hidden">
         <div className="p-4 border-b border-gray-100">
           <h2 className="font-medium text-primary-800">
             {language === 'zh' ? '投资组合洞察' : 'Portfolio Insights'}

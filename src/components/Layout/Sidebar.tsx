@@ -27,9 +27,10 @@ import {
 
 interface SidebarProps {
   collapsed: boolean;
+  onToggleCollapse?: () => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ collapsed }) => {
+const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggleCollapse }) => {
   const location = useLocation();
   const { t } = useLanguage();
   
@@ -80,7 +81,7 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed }) => {
   const renderNavSection = (title: string, items: any[]) => (
     <div className={`mt-3 ${collapsed ? '' : 'px-2'}`}>
       {!collapsed && (
-        <h3 className="text-xs font-semibold text-primary-300 uppercase tracking-wider mb-1 px-2">
+        <h3 className="text-xs font-semibold text-blue-200 uppercase tracking-wider mb-2 px-2">
           {title}
         </h3>
       )}
@@ -91,9 +92,9 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed }) => {
               to={item.path}
               className={`flex items-center py-2 ${collapsed ? 'justify-center px-0' : 'px-3 rounded-md'} ${
                 isActive(item.path)
-                  ? 'bg-primary-700 text-white'
-                  : 'text-primary-100 hover:bg-primary-700/50'
-              } transition-colors duration-150 ease-in-out`}
+                  ? 'glass-card text-white shadow-lg border border-white/20'
+                  : 'text-white/90 hover:bg-white/15 hover:text-white border border-transparent hover:border-white/10'
+              } transition-all duration-300 ease-in-out`}
             >
               <span className="flex-shrink-0">{item.icon}</span>
               {!collapsed && <span className="ml-3 text-sm whitespace-nowrap">{item.name}</span>}
@@ -106,15 +107,29 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed }) => {
 
   return (
     <div className="h-full flex flex-col">
-      {/* Logo */}
+      {/* Clickable Logo */}
       <div className="flex items-center h-12 border-b border-primary-700 py-3">
-        {collapsed ? (
-          <div className="text-white flex justify-center w-full">
-            <DealLensLogo size="small" variant="monochrome" showText={false} />
-          </div>
+        {onToggleCollapse ? (
+          <button
+            onClick={onToggleCollapse}
+            className={`hidden md:flex items-center w-full transition-all duration-300 hover:bg-white/5 rounded-lg ${
+              collapsed ? 'justify-center' : 'px-3 ml-0.5'
+            }`}
+            aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+          >
+            {collapsed ? (
+              <div className="text-white">
+                <DealLensLogo size="small" variant="monochrome" showText={false} />
+              </div>
+            ) : (
+              <div className="flex items-center">
+                <DealLensLogo size="small" variant="monochrome" showText={true} />
+              </div>
+            )}
+          </button>
         ) : (
-          <div className="flex items-center px-3 ml-0.5">
-            <DealLensLogo size="small" variant="monochrome" showText={true} />
+          <div className={collapsed ? "text-white flex justify-center w-full" : "flex items-center px-3 ml-0.5"}>
+            <DealLensLogo size="small" variant="monochrome" showText={!collapsed} />
           </div>
         )}
       </div>

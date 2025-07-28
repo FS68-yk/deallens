@@ -21,16 +21,16 @@ const Filters: React.FC = () => {
   const totalActiveFilters = Object.values(activeFilters).flat().length;
 
   return (
-    <div className="bg-white rounded-lg shadow-sm">
-      <div className="p-3 sm:p-4 border-b border-gray-100 flex justify-between items-center">
+    <div className="glass-card rounded-2xl shadow-2xl">
+      <div className="p-4 sm:p-5 border-b border-white/20 flex justify-between items-center">
         <button 
           onClick={() => setIsFilterPanelOpen(!isFilterPanelOpen)}
-          className="flex items-center text-primary-800 font-medium hover:text-primary-700"
+          className="flex items-center text-white font-medium hover:text-white/80 transition-colors duration-200"
         >
           <Filter size={16} className="mr-2" />
           {t('common.filters')}
           {totalActiveFilters > 0 && (
-            <span className="ml-2 bg-primary-100 text-primary-700 rounded-full w-5 h-5 flex items-center justify-center text-xs">
+            <span className="ml-2 glass text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">
               {totalActiveFilters}
             </span>
           )}
@@ -43,7 +43,7 @@ const Filters: React.FC = () => {
         {totalActiveFilters > 0 && (
           <button
             onClick={clearFilters}
-            className="text-sm text-primary-600 hover:text-primary-800 flex items-center"
+            className="text-sm text-white/80 hover:text-white flex items-center transition-colors duration-200"
           >
             <X size={14} className="mr-1" />
             {t('common.clearAll')}

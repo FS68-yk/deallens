@@ -27,15 +27,15 @@ const ProjectTabs: React.FC<ProjectTabsProps> = ({ project }) => {
 
   return (
     <div>
-      <div className="mb-6 border-b border-gray-200">
+      <div className="mb-6 glass-card rounded-2xl p-4">
         <div className="flex space-x-6 overflow-x-auto scrollbar-thin">
           {tabs.map((tab) => (
             <button
               key={tab.id}
-              className={`flex items-center px-1 py-3 whitespace-nowrap border-b-2 font-medium text-sm transition-colors ${
+              className={`flex items-center px-4 py-3 whitespace-nowrap rounded-xl font-medium text-sm transition-all duration-300 ${
                 activeTab === tab.id
-                  ? 'border-primary-600 text-primary-700'
-                  : 'border-transparent text-gray-500 hover:text-gray-700'
+                  ? 'bg-white/20 text-white shadow-lg backdrop-blur-sm'
+                  : 'text-white/70 hover:text-white hover:bg-white/10'
               }`}
               onClick={() => setActiveTab(tab.id)}
             >
@@ -49,18 +49,18 @@ const ProjectTabs: React.FC<ProjectTabsProps> = ({ project }) => {
       <div className="animate-fade-in">
         {activeTab === 'overview' && (
           <div className="space-y-6">
-            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+            <div className="glass-card rounded-2xl shadow-2xl overflow-hidden">
               <div className="p-6">
-                <h2 className="text-lg font-semibold text-primary-800 mb-4">{t('project.projectOverview')}</h2>
-                <p className="text-gray-700 leading-relaxed mb-4">{project.description}</p>
+                <h2 className="text-lg font-semibold text-white mb-4">{t('project.projectOverview')}</h2>
+                <p className="text-white/90 leading-relaxed mb-4">{project.description}</p>
                 
                 <div className="mt-6">
-                  <h3 className="text-md font-medium text-primary-700 mb-2">{t('project.tags')}</h3>
+                  <h3 className="text-md font-medium text-white mb-2">{t('project.tags')}</h3>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, index) => (
                       <span 
                         key={index}
-                        className="bg-gray-100 text-gray-700 px-2.5 py-1 rounded-full text-sm"
+                        className="bg-white/20 text-white px-2.5 py-1 rounded-full text-sm backdrop-blur-sm"
                       >
                         {tag}
                       </span>
@@ -82,28 +82,28 @@ const ProjectTabs: React.FC<ProjectTabsProps> = ({ project }) => {
         )}
 
         {activeTab === 'financials' && (
-          <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+          <div className="glass-card rounded-2xl shadow-2xl overflow-hidden">
             <div className="p-6">
-              <h2 className="text-lg font-semibold text-primary-800 mb-4">{t('project.financialInformation')}</h2>
+              <h2 className="text-lg font-semibold text-white mb-4">{t('project.financialInformation')}</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <div className="text-sm text-gray-500 mb-1">{t('project.revenueGrowth')}</div>
-                  <div className={`text-xl font-semibold ${project.financials.revenueGrowth > 0 ? 'text-success-600' : 'text-gray-800'}`}>
+                <div className="glass p-4 rounded-xl border border-white/20">
+                  <div className="text-sm text-white/70 mb-1">{t('project.revenueGrowth')}</div>
+                  <div className={`text-xl font-semibold ${project.financials.revenueGrowth > 0 ? 'text-green-400' : 'text-white'}`}>
                     {project.financials.revenueGrowth}%
                   </div>
                 </div>
                 
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <div className="text-sm text-gray-500 mb-1">{t('project.monthlyBurn')}</div>
-                  <div className="text-xl font-semibold text-error-600">
+                <div className="glass p-4 rounded-xl border border-white/20">
+                  <div className="text-sm text-white/70 mb-1">{t('project.monthlyBurn')}</div>
+                  <div className="text-xl font-semibold text-red-400">
                     ${(project.financials.burn / 1000).toFixed(1)}k
                   </div>
                 </div>
                 
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <div className="text-sm text-gray-500 mb-1">{t('project.runway')}</div>
-                  <div className="text-xl font-semibold text-primary-700">
+                <div className="glass p-4 rounded-xl border border-white/20">
+                  <div className="text-sm text-white/70 mb-1">{t('project.runway')}</div>
+                  <div className="text-xl font-semibold text-blue-400">
                     {project.financials.runway} {language === 'zh' ? '个月' : 'months'}
                   </div>
                 </div>
@@ -111,36 +111,36 @@ const ProjectTabs: React.FC<ProjectTabsProps> = ({ project }) => {
               
               {project.financials.previousRound.date && (
                 <div className="mt-8">
-                  <h3 className="text-md font-medium text-primary-700 mb-3">{t('project.previousFundingRound')}</h3>
-                  <div className="bg-gray-50 p-4 rounded-lg">
+                  <h3 className="text-md font-medium text-white mb-3">{t('project.previousFundingRound')}</h3>
+                  <div className="glass p-4 rounded-xl border border-white/20">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       <div>
-                        <div className="text-sm text-gray-500 mb-1">{t('project.date')}</div>
-                        <div className="font-medium">
+                        <div className="text-sm text-white/70 mb-1">{t('project.date')}</div>
+                        <div className="font-medium text-white">
                           {format(new Date(project.financials.previousRound.date), language === 'zh' ? 'yyyy年MM月dd日' : 'MMM d, yyyy')}
                         </div>
                       </div>
                       <div>
-                        <div className="text-sm text-gray-500 mb-1">{t('project.amount')}</div>
-                        <div className="font-medium">
+                        <div className="text-sm text-white/70 mb-1">{t('project.amount')}</div>
+                        <div className="font-medium text-white">
                           ${(project.financials.previousRound.amount / 1000000).toFixed(1)}M
                         </div>
                       </div>
                       <div>
-                        <div className="text-sm text-gray-500 mb-1">{t('project.valuation')}</div>
-                        <div className="font-medium">
+                        <div className="text-sm text-white/70 mb-1">{t('project.valuation')}</div>
+                        <div className="font-medium text-white">
                           ${(project.financials.previousRound.valuation / 1000000).toFixed(1)}M
                         </div>
                       </div>
                     </div>
                     
                     <div className="mt-4">
-                      <div className="text-sm text-gray-500 mb-2">{t('project.investors')}</div>
+                      <div className="text-sm text-white/70 mb-2">{t('project.investors')}</div>
                       <div className="flex flex-wrap gap-2">
                         {project.financials.previousRound.investors.map((investor, index) => (
                           <span 
                             key={index}
-                            className="bg-white border border-gray-200 text-gray-700 px-2.5 py-1 rounded-full text-sm"
+                            className="bg-white/20 text-white px-2.5 py-1 rounded-full text-sm backdrop-blur-sm"
                           >
                             {investor}
                           </span>
@@ -155,21 +155,21 @@ const ProjectTabs: React.FC<ProjectTabsProps> = ({ project }) => {
         )}
 
         {activeTab === 'competitors' && (
-          <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+          <div className="glass-card rounded-2xl shadow-2xl overflow-hidden">
             <div className="p-6">
-              <h2 className="text-lg font-semibold text-primary-800 mb-4">{t('project.competitiveLandscape')}</h2>
+              <h2 className="text-lg font-semibold text-white mb-4">{t('project.competitiveLandscape')}</h2>
               
               {project.competitors && project.competitors.length > 0 ? (
                 <div className="space-y-4">
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-white/80 mb-4">
                     {t('project.keyCompetitors', { industry: project.industry, name: project.name })}
                   </p>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {project.competitors.map((competitor, index) => (
-                      <div key={index} className="border border-gray-200 rounded-lg p-4 hover:border-primary-200 transition-colors">
-                        <h3 className="font-medium text-primary-700">{competitor}</h3>
-                        <p className="text-sm text-gray-500 mt-1">
+                      <div key={index} className="glass p-4 rounded-xl border border-white/20 hover:border-white/40 transition-colors">
+                        <h3 className="font-medium text-white">{competitor}</h3>
+                        <p className="text-sm text-white/70 mt-1">
                           {language === 'zh' ? '竞争对手' : 'Competitor'}
                         </p>
                       </div>
@@ -177,7 +177,7 @@ const ProjectTabs: React.FC<ProjectTabsProps> = ({ project }) => {
                   </div>
                 </div>
               ) : (
-                <p className="text-gray-500">{t('project.noCompetitorInfo')}</p>
+                <p className="text-white/70">{t('project.noCompetitorInfo')}</p>
               )}
             </div>
           </div>

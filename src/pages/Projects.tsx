@@ -87,28 +87,28 @@ const Projects: React.FC = () => {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-sm mb-6">
-        <div className="p-4 border-b border-gray-100 flex justify-between items-center">
+      <div className="glass-card rounded-2xl shadow-2xl mb-6">
+        <div className="p-4 border-b border-white/20 flex justify-between items-center">
           <div className="flex items-center gap-4">
             <button 
-              className={`text-sm font-medium ${viewType === 'list' ? 'text-primary-700' : 'text-gray-500 hover:text-gray-700'}`}
+              className={`text-sm font-medium transition-colors duration-200 ${viewType === 'list' ? 'text-white' : 'text-white/70 hover:text-white'}`}
               onClick={() => setViewType('list')}
             >
               {language === 'zh' ? '列表视图' : 'List View'}
             </button>
             <button 
-              className={`text-sm font-medium ${viewType === 'grid' ? 'text-primary-700' : 'text-gray-500 hover:text-gray-700'}`}
+              className={`text-sm font-medium transition-colors duration-200 ${viewType === 'grid' ? 'text-white' : 'text-white/70 hover:text-white'}`}
               onClick={() => setViewType('grid')}
             >
               {language === 'zh' ? '卡片视图' : 'Card View'}
             </button>
           </div>
           <div className="flex items-center gap-2">
-            <button className="p-1.5 text-gray-500 hover:text-primary-700 hover:bg-gray-100 rounded">
+            <button className="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200">
               <Filter size={16} />
             </button>
             <button 
-              className={`p-1.5 flex items-center text-sm ${sortField === 'name' ? 'text-primary-700 bg-gray-100' : 'text-gray-500 hover:text-primary-700 hover:bg-gray-100'} rounded`}
+              className={`p-2 flex items-center text-sm transition-all duration-200 ${sortField === 'name' ? 'text-white glass' : 'text-white/70 hover:text-white hover:bg-white/10'} rounded-lg`}
               onClick={() => toggleSort('name')}
             >
               {language === 'zh' ? '名称' : 'Name'}
@@ -117,7 +117,7 @@ const Projects: React.FC = () => {
               )}
             </button>
             <button 
-              className={`p-1.5 flex items-center text-sm ${sortField === 'updatedAt' ? 'text-primary-700 bg-gray-100' : 'text-gray-500 hover:text-primary-700 hover:bg-gray-100'} rounded`}
+              className={`p-2 flex items-center text-sm transition-all duration-200 ${sortField === 'updatedAt' ? 'text-white glass' : 'text-white/70 hover:text-white hover:bg-white/10'} rounded-lg`}
               onClick={() => toggleSort('updatedAt')}
             >
               {language === 'zh' ? '更新日期' : 'Update Date'}

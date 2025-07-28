@@ -119,7 +119,7 @@ const DocumentRepository: React.FC = () => {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow-sm mb-6">
+      <div className="glass-card rounded-2xl shadow-2xl mb-6">
         <div className="p-4 border-b border-gray-100 flex justify-between items-center">
           <div className="relative w-96">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
@@ -143,7 +143,7 @@ const DocumentRepository: React.FC = () => {
               </button>
               
               {showFilterMenu && (
-                <div className="absolute right-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 py-2 w-48 z-10">
+                <div className="absolute right-0 mt-2 glass-card rounded-2xl shadow-2xl py-3 w-48 z-10">
                   <div className="px-3 py-1 text-xs text-gray-500 font-medium">文件类型</div>
                   {fileTypes.map(type => (
                     <div key={type.value} className="px-3 py-1">
